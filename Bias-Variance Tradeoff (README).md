@@ -23,7 +23,7 @@ This tool allows you to:
 5. Switch between different realizations of the training and test sets.
 
 ## Example<a name="example"></a> ##
-The pre-configured example uses \$y=e^{-x} sin(2x)\$ defined over \x \epsilon [-3, 2]\$ as the "unknown" function. The model being fit is a polynomial of order (**hyperparameter**) between 2 and 10. The **parameter**s are the coefficients of the polynomial. The goal is to select the appropriate model order.
+The pre-configured example uses \$y=e^{-x} sin(2x)\$ defined over \$x \epsilon [-3, 2]\$ as the "unknown" function. The model being fit is a polynomial of order (**hyperparameter**) between 2 and 10. The **parameter**s are the coefficients of the polynomial. The goal is to select the appropriate model order.
 
 When the number of adjustable parameters (between 2 and 10)  is comparable to the number of observations (20), there is an optimal model order (6 in this example) as evidenced by the dip in the test MSE (orange line) in Figure 1. When the model order is low, the training and test MSEs are large (high bias). When the model order is high, the test MSE is large (high variance).
 ![training set size 20, noise stdev 1](images/train20noise1wide.png)

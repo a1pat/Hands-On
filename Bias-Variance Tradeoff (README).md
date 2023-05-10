@@ -23,23 +23,55 @@ This tool allows you to:
 5. Switch between different realizations of the training and test sets.
 
 ## Example<a name="example"></a> ##
-The pre-configured example uses \$y=e^{-x} sin(2x)\$ defined over \$x \epsilon [-3, 2]\$ as the "unknown" function. The model being fit is a polynomial of order (**hyperparameter**) between 2 and 10. The **parameter**s are the coefficients of the polynomial. The goal is to select the appropriate model order.
+The pre-configured example uses \$y=e^{-x} sin(2x)\$ defined over \$x  \ \epsilon \  [-3, 2]\$ as the "unknown" function. The model being fit is a polynomial of order (**hyperparameter**) between 2 and 10. The **parameter**s are the coefficients of the polynomial. The goal is to select the appropriate model order.
 
 When the number of adjustable parameters (between 2 and 10)  is comparable to the number of observations (20), there is an optimal model order (6 in this example) as evidenced by the dip in the test MSE (orange line) in Figure 1. When the model order is low, the training and test MSEs are large (high bias). When the model order is high, the test MSE is large (high variance).
-![training set size 20, noise stdev 1](images/train20noise1wide.png)
+<figure>
+  <p align="center">
+    <img src="images/train20noise1wide.png" width=60%>
+  </p>
+  <p align="center">
+    Figure 1. Training set size = 20; noise standard deviation = 1 (Image by author).
+  </p>
+</figure> 
 
-When the number of observations (200) is much larger than the number of adjustable parameters (between 2 and 10), the model is less prone to overfitting – the training and test MSEs as similar in all cases examined here (Figure 2; note the different y-axis scale compared to Figure 1). The bias for low model order is comparable to Figure 1 where the training set size is small, but the variance for high model order is now significantly smaller.
-![training set size 200, noise stdev 1](images/train200noise1wide.png)
+When the number of observations (200) is much larger than the number of adjustable parameters (model order between 2 and 10), the model is less prone to overfitting – the training and test MSEs as similar in all cases examined here (Figure 2; note the different y-axis scale compared to Figure 1). The bias for low model order is comparable to Figure 1 where the training set size is small, but the variance for high model order is now significantly smaller.
+<figure>
+  <p align="center">
+    <img src="images/train200noise1wide.png" width=60%>
+  </p>
+  <p align="center">
+    Figure 2. Training set size = 200; noise standard deviation = 1 (Image by author).
+  </p>
+</figure>
 
-When the noise level increases (standard deviation of noise is 5x), the model trained using a small number of observations is even more susceptible to high variance (overfitting). Note the large test MSE at the right-hand side of Figure 3. A model trained using a large number of observations is less susceptible to overfitting – the training and test MSEs are comparable in Figure 4 for all model orders.
-![training set size 20, noise stdev 5](images/train20noise5wide.png)
-![training set size 200, noise stdev 5](images/train200noise5wide.png)
+When the noise level increases (standard deviation of noise is 5x), the model trained using a small number of observations is even more susceptible to high variance (overfitting). Note the large test MSE at the right-hand side of Figure 3. 
+<figure>
+  <p align="center">
+    <img src="images/train20noise5wide.png" width=60%>
+  </p>
+  <p align="center">
+    Figure 3. Training set size = 20; noise standard deviation = 5 (Image by author).
+  </p>
+</figure>
+
+A model trained using a large number of observations is less susceptible to overfitting – the training and test MSEs are comparable in Figure 4 for all model orders.
+<figure>
+  <p align="center">
+    <img src="images/train200noise5wide.png" width=60%>
+  </p>
+  <p align="center">
+    Figure 4. Training set size = 200; noise standard deviation = 5 (Image by author).
+  </p>
+</figure>
 
 To look at it differently, we ask the question, “What if the model is trained using a different realization of the training set?” This is answered using Figures 5 and 6 below.
-Consider how different each of the colored lines is from the others in Figure 5 and again in Figure 6. The colored lines in Figure 6 are grouped tightly (**low variance**) compared to Figure 5 (**high variance**), illustrating point #2 above – increasing the training set size reduces variance.
-
-![training set size 20, noise stdev 1, 5 models](images/train20noise1models5.png)
-![training set size 200, noise stdev 1, 5 models](images/train200noise1models5.png)
+Consider how different each of the colored lines is from the others in Figure 5 and again in Figure 6. The colored lines in Figure 6 are grouped tightly (**low variance**) compared to Figure 5 (**high variance**), illustrating the point made earlier – increasing the training set size reduces variance. The same effect is seen when comparing Figure 7 (high variance) and Figure 8 (low variance).
+|<img src="images/train20noise1order4models5.png" width=75%>|<img src="images/train200noise1order4models5.png" width=75%>|
+|:---:|:---:|
+|<p align="center">Figure 5. Polynomial order = 4; training set size = 20 (Image by author)</p>|<p align="center">Figure 6. Polynomial order = 4; training set size = 200 (Image by author).</p>|
+|<img src="images/train20noise1order6models5.png" width=75%>|<img src="images/train200noise1order6models5.png" width=75%>|
+|<p align="center">Figure 7. Polynomial order = 6; training set size = 20 (Image by author)</p>|<p align="center">Figure 8. Polynomial order = 6; training set size = 200 (Image by author).</p>|
 
 What about bias? In each figure, imagine the average of the colored lines. How closely does this average compare to the “actual” function (bold black line)? This is the bias. The bias is not shown in the figures below; you are encouraged to run the Excel tool and find out for yourself.
 
@@ -47,7 +79,7 @@ Looking at Figures 5 and 6, you may be wondering about fitting several models an
 
 ## File Descriptions<a name="file_descriptions"></a> ##
 There is only one Excel spreadsheet.
-+ **Bias-Variance Tradeoff.xlsx**.
++ Bias-Variance Tradeoff.xlsx.
 
 ## Instructions for Use<a name="instructions_for_use"></a> ##
 1. Download the file in the [File Descriptions](#file_descriptions) section;

@@ -4,9 +4,10 @@ Hands-on experimentation.
 ## Table of Contents ##
 1. [Motivation](#motivation)
 2. [Example](#example)
-3. [File Descriptions](#file_descriptions)
-4. [Instructions for Use](#instructions_for_use)
-5. [Author](#author)
+3. [Required Software](#required_software)
+4. [File Descriptions](#file_descriptions)
+5. [Instructions for Use](#instructions_for_use)
+6. [Author](#author)
 
 ## Motivation<a name="motivation"></a> ##
 This repository contains a simple Excel-based tool to give the budding data scientist a feel for **bias-variance tradeoff** – an important topic in data science and machine learning – by experimenting with hyperparameters, functions, training set size and noise level, all **without using any math, python or R**.
@@ -77,6 +78,11 @@ What about bias? In each figure, imagine the average of the colored lines. How c
 
 Looking at Figures 5 and 6, you may be wondering about fitting several models and averaging them into an “aggregate” model. That will be the subject of a future “Hands On” article.
 
+The closeness-of-fit (MSE) in the above example, and in the Excel tool, is calculated assuming the "true" function is known. This is usually not the case in practice! How should the bias-variance tradeoff be assessed in that case? That will be the subject of another future "Hands On" article. Stay tuned!
+
+## Required Software<a name="required_software"></a> ##
+Microsoft's Excel is required to open and run the spreadsheet.
+
 ## File Descriptions<a name="file_descriptions"></a> ##
 There is only one Excel spreadsheet.
 + Bias-Variance Tradeoff.xlsx.
@@ -93,7 +99,8 @@ There is only one Excel spreadsheet.
   b. Training set size (20 to 800);
   c. Test set size (10 to 200);
   d. Noise standard deviation (1 to 5);
-  e. Model name (this is the choice of one of five buil-in training sets).
+  e. Model name (this is the choice of one of five buil-in training sets);
+8. NOTE: the polynomial coeffients are estimated using Excel's [LINEST](https://support.microsoft.com/en-us/office/linest-function-84d7d0d9-6e50-4101-977a-fa7abf772b6d) function. No effort is made in the spreadsheet to address any numerical issues that may arise in LINEST.
   
 ## Author<a name="author"></a> ##
 Ashutosh A. Patwardhan ([GitHub](https://github.com/a1pat), [LinkedIn](https://www.linkedin.com/in/ashutosh-patwardhan/))
